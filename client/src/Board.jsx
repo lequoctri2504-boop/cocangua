@@ -92,27 +92,29 @@ export default function Board({ board, players, movablePieces, onMove }) {
           key={piece.id}
           cx={x}
           cy={y}
-          r={12}
+          r={16}
           fill={player.color}
           className={`piece ${isMovable ? 'movable' : ''}`}
           onClick={() => isMovable && onMove(piece.id)}
           stroke="rgba(0,0,0,0.5)"
-          strokeWidth={2}
-          style={{ transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' }}
+          strokeWidth={3}
+          style={{ transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', cursor: isMovable ? 'pointer' : 'default' }}
         />
       );
     });
   };
 
   return (
-    <svg width="600" height="600" viewBox="0 0 600 600" style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '50%', boxShadow: '0 0 50px rgba(0,0,0,0.5)' }}>
-      {/* Center finish line */}
-      <circle cx={cx} cy={cy} r={30} fill="rgba(255,255,255,0.1)" stroke="white" strokeWidth={2} />
-      
-      {renderCages()}
-      {renderCells()}
-      {renderHomePaths()}
-      {renderPieces()}
-    </svg>
+    <div className="board-wrapper">
+      <svg width="100%" height="auto" viewBox="0 0 600 600" style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '50%', boxShadow: '0 0 50px rgba(0,0,0,0.5)' }}>
+        {/* Center finish line */}
+        <circle cx={cx} cy={cy} r={30} fill="rgba(255,255,255,0.1)" stroke="white" strokeWidth={2} />
+        
+        {renderCages()}
+        {renderCells()}
+        {renderHomePaths()}
+        {renderPieces()}
+      </svg>
+    </div>
   );
 }

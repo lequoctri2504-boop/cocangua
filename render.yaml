@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ludo-game
+    name: cocangua
     env: node
     plan: free
     buildCommand: npm run build
