@@ -1,0 +1,9 @@
+{
+  "name": "co-ca-ngua",
+  "version": "1.0.0",
+  "description": "Ludo game 2-10 players",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build"
+  }
+}
