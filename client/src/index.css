@@ -352,3 +352,17 @@ body {
   from { filter: drop-shadow(0 0 5px white); }
   to { filter: drop-shadow(0 0 15px white); }
 }
+.movable-horse {
+  animation: horse-bounce 1s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+@keyframes horse-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.15);
+    filter: brightness(1.3);
+  }
+}
